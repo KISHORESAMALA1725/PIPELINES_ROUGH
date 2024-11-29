@@ -1,22 +1,16 @@
 pipeline {
     agent {
-        label "java-slave"
+        label 'docker-slave'
     }
     stages {
-        stage ('This executed in JAVA-Machine') { 
+        stage ('This is interpolation stage' ) {
             steps {
                 script {
-                    sh 'java -version'
-                }
-            }
-        }
-        stage ('This Executed in Docker-Machine') {
-            agent {
-                label 'docker-slave'
-            }
-            steps {
-                script {
-                    sh 'docker version'
+                    def course = "K8S"
+                    if course == "K8S"
+                    println ("welcome to ${course}")
+                    else
+                    println ("Please enroll to ${course}") 
                 }
             }
         }
