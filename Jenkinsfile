@@ -1,9 +1,23 @@
 pipeline {
-    agent none
+    agent {
+        label "java-slave"
+    }
     stages {
-        stage ('stage-1') {
+        stage ('This executed in JAVA-Machine') {
             steps {
-                echo "this is none example"
+                sctipt {
+                    sh 'java -version'
+                }
+            }
+        }
+        stage ('This Executed in Docker-Machine') {
+            agent {
+                label 'docker-slave'
+            }
+            steps {
+                script {
+                    sh 'docker version'
+                }
             }
         }
     }
