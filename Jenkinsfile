@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent none
     stages {
-        stage ('this is FEATURE stage') { 
+        stage ('stage-1') {
             steps {
-                echo "CODE EXECUTED IN FEATURE BRANCH"
+                echo "this is none example"
             }
         }
     }
