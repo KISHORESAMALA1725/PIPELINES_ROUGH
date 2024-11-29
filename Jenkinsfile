@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage ('This executed in JAVA-Machine') { 
             steps {
-                sctipt {
+                script {
                     sh 'java -version'
                 }
             }
