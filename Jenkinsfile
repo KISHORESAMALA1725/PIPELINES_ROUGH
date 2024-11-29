@@ -3,7 +3,7 @@ pipeline {
         label "java-slave"
     }
     stages {
-        stage ('This executed in JAVA-Machine') {
+        stage ('This executed in JAVA-Machine') { 
             steps {
                 sctipt {
                     sh 'java -version'
